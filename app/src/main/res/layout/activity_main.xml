@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/image_logo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:layout_centerInParent="true"
         android:layout_alignParentTop="true"
         android:src="@drawable/mnlogo"
@@ -18,24 +18,28 @@
 
     <LinearLayout
         android:id="@+id/username_layout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/image_logo"
         android:orientation="vertical"
-        android:layout_centerInParent="true">
+        android:layout_centerInParent="true"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingBottom="20dp"
+        android:paddingTop="10dp"
+        >
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:hint="Username"
+            android:hint="@string/username"
             />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:hint="Password"/>
+            android:hint="@string/password"/>
 
     </LinearLayout>
 
@@ -51,7 +55,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Sign In"
+            android:text="@string/sign_in"
             android:onClick="login"/>
 
         <Button
@@ -59,10 +63,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Sign Un"/>
+            android:text="@string/sign_up"
+            android:onClick="register"/>
 
     </LinearLayout>
-
-
 
 </RelativeLayout>

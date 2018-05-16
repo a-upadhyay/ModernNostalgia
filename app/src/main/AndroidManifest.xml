@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MainActivity" android:label="Modern Nostalgia">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,6 +18,12 @@
         </activity>
         <activity android:name=".RegisterActivity"
             android:label="Register">
+        </activity>
+        <activity android:name=".AlbumActivity"
+            android:label="Albums">
+        </activity>
+        <activity android:name=".PhotoActivity"
+            android:label="Photos">
         </activity>
     </application>
 

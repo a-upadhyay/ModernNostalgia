@@ -3,20 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:title="Profile"
+        android:title="@string/profile"
         android:id="@+id/profile"
         app:showAsAction="never" />
     <item
         android:id="@+id/settings"
-        android:title="Settings"
+        android:title="@string/settings"
         app:showAsAction="never" />
     <item
         android:id="@+id/help"
-        android:title="Help"
+        android:title="@string/help"
         app:showAsAction="never" />
     <item
         android:id="@+id/exit"
-        android:title="Exit"
+        android:title="@string/exit"
         app:showAsAction="never" />
 
 </menu>
