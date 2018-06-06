@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">ModernNostalgiaV2</string>
+    <string name="mn_logo">MN_Logo</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="modern_nostalgia_your_blast_to_the_past">Modern Nostalgia - your blast to the past!</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+    <string name="album">Album</string>
+    <string name="gallery">Gallery</string>
+    <string name="captures">Captures</string>
+    <string name="exit">Exit</string>
+    <string name="email">Email</string>
+    <string name="cancel">Cancel</string>
+    <string name="album_cover">Album Cover</string>
 </resources>

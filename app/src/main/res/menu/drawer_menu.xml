@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/nav_login"
 
-        android:title="Login" />
+        android:title="@string/login" />
     <item
         android:id="@+id/nav_register"
 
-        android:title="Register" />
+        android:title="@string/register" />
     <item
         android:id="@+id/nav_album"
 
-        android:title="Album" />
+        android:title="@string/album" />
     <item
         android:id="@+id/nav_gallery"
 
-        android:title="Gallery" />
+        android:title="@string/gallery" />
     <item
         android:id="@+id/nav_captures"
 
-        android:title="Captures" />
+        android:title="@string/captures" />
+
+    <item android:id="@+id/exit"
+        android:title="@string/exit"/>
 
 </menu>

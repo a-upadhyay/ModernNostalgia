@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+/**
+ * Launching activity: home screen for Modern Nostalgia application
+ */
 public class MainActivity extends DrawerActivity {
 
     @Override
@@ -13,9 +16,13 @@ public class MainActivity extends DrawerActivity {
         setContentView(R.layout.activity_main);
     }
 
-
-    public void intent(View view) {
+    public void startLogin(View view) {
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+        startActivity(intent);
+    }
+
+    public void startRegistration(View view) {
+        Intent intent = new Intent(MainActivity.this, RegistrationActivity.class);
         startActivity(intent);
     }
 }

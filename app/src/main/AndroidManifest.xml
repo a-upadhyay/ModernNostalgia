@@ -17,6 +17,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".LoginActivity"/>
+        <activity android:name=".RegistrationActivity"/>
+        <activity android:name=".AlbumActivity"/>
+        <activity android:name=".PhotoActivity"/>
+        <activity android:name=".CameraActivity"/>
+        <activity android:name=".CapturesActivity"/>
+        <activity android:name=".SettingsActivity"/>
 
     </application>
 

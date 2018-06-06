@@ -1,6 +1,7 @@
 package com.mad.modernnostalgiav2;
 
 
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
@@ -17,8 +18,11 @@ import android.support.design.widget.NavigationView;
 import com.mad.modernnostalgiav2.MainActivity;
 import com.mad.modernnostalgiav2.R;
 
-
+/**
+ * This is the base class for the navigation drawer menu. All activities extend this class.
+ */
 public abstract class DrawerActivity extends AppCompatActivity implements MenuItem.OnMenuItemClickListener{
+    Intent intent;
 
     private FrameLayout view_stub; //This is the framelayout to keep your content view
     private NavigationView navigation_view; // The new navigation view from Android Design Library. Can inflate menu resources. Easy
@@ -102,16 +106,32 @@ public abstract class DrawerActivity extends AppCompatActivity implements MenuIt
 
     @Override
     public boolean onMenuItemClick(MenuItem item) {
-       /* switch (item.getItemId()) {
-            case R.id.item1:
-                // handle it
+       switch (item.getItemId()) {
+            case R.id.nav_login:
+                intent = new Intent(DrawerActivity.this, LoginActivity.class);
+                startActivity(intent);
                 break;
-            case R.id.item2:
-                // do whatever
+           case R.id.nav_register:
+                intent = new Intent(DrawerActivity.this, RegistrationActivity.class);
+                startActivity(intent);
+               break;
+            case R.id.nav_album:
+                intent = new Intent(DrawerActivity.this, AlbumActivity.class);
+                 startActivity(intent);
                 break;
-            // and so on...
-        } */
-        return false;
+           case R.id.nav_captures:
+               intent = new Intent(DrawerActivity.this, CapturesActivity.class);
+               startActivity(intent);
+               break;
+           case R.id.nav_gallery:
+               intent = new Intent(DrawerActivity.this, PhotoActivity.class);
+               startActivity(intent);
+               break;
+           case R.id.exit:
+               finish();
+               break;
+        }
+        return true;
     }
 
 }
