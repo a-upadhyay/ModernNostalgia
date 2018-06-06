@@ -1,4 +1,4 @@
-package com.mad.modnos;
+package com.mad.modernnostalgiav2;
 
 import org.junit.Test;
 
