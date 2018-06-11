@@ -4,6 +4,8 @@
     <string name="sign_in">Sign In</string>
     <string name="sign_up">Sign Up</string>
     <string name="modern_nostalgia_your_blast_to_the_past">Modern Nostalgia - your blast to the past!</string>
+    <string name ="no_account"> No account? Register </string>
+    <string name="already_account">Have an account? Login</string>
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="login">Login</string>

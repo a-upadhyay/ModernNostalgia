@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="text"
-            android:hint="@string/username" />
+            android:hint="@string/email" />
 
         <EditText
             android:id="@+id/et_login_password"
@@ -41,20 +41,35 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_below="@+id/username_layout"
         android:layout_centerInParent="true">
 
         <Button
             android:id="@+id/button_sign_in"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:text="@string/sign_in"
             android:onClick="login"
+            android:background="@color/buttonColor" />
+
+        <Button
+            android:id="@+id/button_registration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/no_account"
+            android:onClick="registration"
             android:background="@color/buttonColor"/>
 
-
-
     </LinearLayout>
+    <ProgressBar
+        android:id="@+id/reg_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"/>
 
 </RelativeLayout>

@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "1014650719634",
+    "firebase_url": "https://modernnostalgiav2.firebaseio.com",
+    "project_id": "modernnostalgiav2",
+    "storage_bucket": "modernnostalgiav2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1014650719634:android:78e71774759b4aa1",
+        "android_client_info": {
+          "package_name": "com.mad.modernnostalgiav2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1014650719634-gm09urqlegcn81dgif7fgifk8j94ttir.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.mad.modernnostalgiav2",
+            "certificate_hash": "fefb7a65c543cb441973a7a28d9509438050c60a"
+          }
+        },
+        {
+          "client_id": "1014650719634-9j185tf2tmlfek5hr26ts2qvqq7nqk6p.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "1014650719634-9j185tf2tmlfek5hr26ts2qvqq7nqk6p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApM-i7wl47UPZ-iNxicyjws83V08vMkuY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1014650719634-9j185tf2tmlfek5hr26ts2qvqq7nqk6p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
