@@ -10,6 +10,6 @@ public class SettingsActivity extends DrawerActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.hello_world);
+        setContentView(R.layout.settings_layout);
     }
 }

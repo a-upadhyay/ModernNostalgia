@@ -107,6 +107,10 @@ public abstract class DrawerActivity extends AppCompatActivity implements MenuIt
     @Override
     public boolean onMenuItemClick(MenuItem item) {
        switch (item.getItemId()) {
+           case R.id.nav_main:
+               intent = new Intent(DrawerActivity.this, MainActivity.class);
+               startActivity(intent);
+               break;
             case R.id.nav_login:
                 intent = new Intent(DrawerActivity.this, LoginActivity.class);
                 startActivity(intent);
@@ -120,15 +124,21 @@ public abstract class DrawerActivity extends AppCompatActivity implements MenuIt
                  startActivity(intent);
                 break;
            case R.id.nav_captures:
-               intent = new Intent(DrawerActivity.this, CapturesActivity.class);
+               intent = new Intent(DrawerActivity.this, CameraActivity.class);
                startActivity(intent);
                break;
            case R.id.nav_gallery:
                intent = new Intent(DrawerActivity.this, PhotoActivity.class);
                startActivity(intent);
                break;
+           case R.id.settings:
+               intent = new Intent(DrawerActivity.this, SettingsActivity.class);
+               startActivity(intent);
+               break;
            case R.id.exit:
-               finish();
+              // finish();
+               this.finish();
+
                break;
         }
         return true;

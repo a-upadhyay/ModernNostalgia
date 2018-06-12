@@ -27,7 +27,6 @@ public class LoginActivity extends DrawerActivity{
     private static final String TAG = "MESSAGE" ;
     private EditText mEmail, mPassword;
     private ProgressBar mProgressBar;
-    private Button mSignIn, mRegister;
     private FirebaseAuth mAuth;
 
 
@@ -85,7 +84,7 @@ public class LoginActivity extends DrawerActivity{
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "signInWithEmail:success");
                     Intent intent = new Intent(LoginActivity.this, AlbumActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //TODO check better way of doing this
+                    //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //TODO check better way of doing this
                     startActivity(intent);
 
                     FirebaseUser user = mAuth.getCurrentUser();
@@ -121,7 +120,10 @@ public class LoginActivity extends DrawerActivity{
      *  @param view
      */
     public void login(View view) {
-        loginUser();
+       try { loginUser(); }
+       catch(IllegalStateException e) {
+           startActivity(new Intent(LoginActivity.this, MainActivity.class));
+       }
     }
 
     public void registration(View view) {

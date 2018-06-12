@@ -3,27 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/nav_main"
+        android:icon="@drawable/home_icon"
+        android:title="@string/main" />
+    <item
         android:id="@+id/nav_login"
-
         android:title="@string/login" />
     <item
         android:id="@+id/nav_register"
-
         android:title="@string/register" />
     <item
         android:id="@+id/nav_album"
-
+        android:icon="@drawable/album_icon"
         android:title="@string/album" />
     <item
         android:id="@+id/nav_gallery"
-
+        android:icon="@drawable/img_icon"
         android:title="@string/gallery" />
     <item
         android:id="@+id/nav_captures"
+        android:icon="@drawable/camera_button"
+        android:title="@string/camera" />
 
-        android:title="@string/captures" />
+    <item android:id="@+id/settings"
+        android:icon="@drawable/settings_icon"
+        android:title="@string/settings"/>
 
     <item android:id="@+id/exit"
+        android:icon="@drawable/exit_icon"
         android:title="@string/exit"/>
 
 </menu>

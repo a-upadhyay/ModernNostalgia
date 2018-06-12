@@ -1,6 +1,8 @@
 package com.mad.modernnostalgiav2;
 
+import android.annotation.TargetApi;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.util.Log;
@@ -17,6 +19,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 
+import java.util.Objects;
+
+import static java.util.Objects.requireNonNull;
+
 /**
  * New Activity: Registration. This is for the user to register an account
  */
@@ -24,7 +30,6 @@ public class RegistrationActivity extends DrawerActivity {
     private static final String TAG = "MESSAGE" ;
     private EditText mEmail, mPassword;
     private ProgressBar mProgressBar;
-    private Button mSignUp, mReturn;
     private FirebaseAuth mAuth;
 
     @Override
@@ -38,7 +43,7 @@ public class RegistrationActivity extends DrawerActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        mSignUp = findViewById(R.id.button_sign_up);
+        //mSignUp = findViewById(R.id.button_sign_up);
     }
 
     private void registerUser() {
@@ -76,7 +81,7 @@ public class RegistrationActivity extends DrawerActivity {
                     Log.d(TAG, "createUserWithEmail:success");
                     Toast.makeText(getApplicationContext(),"User registered",Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
-                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                   // intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 } else {
                     Log.w(TAG, "createUserWithEmail:failure", task.getException());
@@ -89,7 +94,12 @@ public class RegistrationActivity extends DrawerActivity {
     }
 
     public void registerUser(View view) {
-        registerUser();
+       try {
+           registerUser();
+       }
+       catch (IllegalStateException e) {
+           startActivity(new Intent(getApplicationContext(), MainActivity.class));
+       }
     }
 
     public void loginReturn(View view) {
