@@ -4,12 +4,12 @@
 
     <ImageView
         android:id="@+id/modnos_logo"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_centerInParent="true"
+        android:layout_width="142dp"
+        android:layout_height="91dp"
         android:layout_alignParentTop="true"
-        android:src="@drawable/applogo"
-        android:contentDescription="@string/mn_logo"/>
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/mn_logo"
+        android:src="@drawable/applogo" />
 
     <LinearLayout
         android:id="@+id/username_layout"

@@ -19,12 +19,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"/>
-        <activity android:name=".RegistrationActivity"/>
-        <activity android:name=".AlbumActivity"/>
-        <activity android:name=".PhotoActivity"/>
-        <activity android:name=".CameraActivity"/>
-        <activity android:name=".SettingsActivity"/>
+        <activity android:name=".LoginActivity" android:label="@string/login_screen"/>
+        <activity android:name=".RegistrationActivity" android:label="@string/registration_screen"/>
+        <activity android:name=".AlbumActivity" android:label="@string/album_screen"/>
+        <activity android:name=".PhotoActivity" android:label="@string/photo_screen"/>
+        <activity android:name=".CameraActivity" android:label="@string/camera_screen"/>
+        <activity android:name=".SettingsActivity" android:label="@string/settings_screen"/>
 
     </application>
 

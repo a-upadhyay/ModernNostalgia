@@ -24,12 +24,15 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="361dp"
-        android:layout_height="wrap_content"
+        android:layout_width="129dp"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp"
-        android:text="@string/album_message" />
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="18dp"
+        android:text="@string/album_message"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="18dp" />
 
 
 </RelativeLayout>

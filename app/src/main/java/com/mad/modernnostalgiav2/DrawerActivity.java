@@ -18,9 +18,7 @@ import android.support.design.widget.NavigationView;
 import com.mad.modernnostalgiav2.MainActivity;
 import com.mad.modernnostalgiav2.R;
 
-/**
- * This is the base class for the navigation drawer menu. All activities extend this class.
- */
+/** This is the base class for the navigation drawer menu. All activities extend this class. */
 public abstract class DrawerActivity extends AppCompatActivity implements MenuItem.OnMenuItemClickListener{
     Intent intent;
 
@@ -30,13 +28,18 @@ public abstract class DrawerActivity extends AppCompatActivity implements MenuIt
     private ActionBarDrawerToggle mDrawerToggle;
     private Menu drawerMenu;
 
+
+    /**
+     * This method is called when the activity is created
+     * @param savedInstanceState the activity state
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.drawer_layout_base);// The base layout that contains your navigation drawer.
-        view_stub = (FrameLayout) findViewById(R.id.view_stub);
-        navigation_view = (NavigationView) findViewById(R.id.navigation_view);
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        view_stub = findViewById(R.id.view_stub);
+        navigation_view = findViewById(R.id.navigation_view);
+        mDrawerLayout = findViewById(R.id.drawer_layout);
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, 0, 0);
         mDrawerLayout.setDrawerListener(mDrawerToggle);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -45,24 +48,30 @@ public abstract class DrawerActivity extends AppCompatActivity implements MenuIt
         for(int i = 0; i < drawerMenu.size(); i++) {
             drawerMenu.getItem(i).setOnMenuItemClickListener(this);
         }
-        // and so on...
     }
 
+    /**
+     * Called to sync drawer. @param savedInstanceState the activity state
+     */
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
         mDrawerToggle.syncState();
     }
 
+    /**
+     * If configuration changes, call @param newConfig
+     */
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
         mDrawerToggle.onConfigurationChanged(newConfig);
     }
 
-    /* Override all setContentView methods to put the content view to the FrameLayout view_stub
-     * so that, we can make other activity implementations looks like normal activity subclasses.
+    /**
+     * Override methods for setContentView to make other activity implementations, three below @param layoutResID
      */
+
     @Override
     public void setContentView(int layoutResID) {
         if (view_stub != null) {
@@ -92,6 +101,9 @@ public abstract class DrawerActivity extends AppCompatActivity implements MenuIt
         }
     }
 
+    /**
+     * Handle selection of drawer menu items
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Pass the event to ActionBarDrawerToggle, if it returns
@@ -99,25 +111,19 @@ public abstract class DrawerActivity extends AppCompatActivity implements MenuIt
         if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
-        // Handle your other action bar items...
 
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * Method for dealing with menu navigation
+     */
     @Override
     public boolean onMenuItemClick(MenuItem item) {
        switch (item.getItemId()) {
            case R.id.nav_main:
                intent = new Intent(DrawerActivity.this, MainActivity.class);
                startActivity(intent);
-               break;
-            case R.id.nav_login:
-                intent = new Intent(DrawerActivity.this, LoginActivity.class);
-                startActivity(intent);
-                break;
-           case R.id.nav_register:
-                intent = new Intent(DrawerActivity.this, RegistrationActivity.class);
-                startActivity(intent);
                break;
             case R.id.nav_album:
                 intent = new Intent(DrawerActivity.this, AlbumActivity.class);
@@ -136,9 +142,7 @@ public abstract class DrawerActivity extends AppCompatActivity implements MenuIt
                startActivity(intent);
                break;
            case R.id.exit:
-              // finish();
-               this.finish();
-
+               finish();
                break;
         }
         return true;

@@ -1,5 +1,11 @@
 <resources>
     <string name="app_name">ModernNostalgiaV2</string>
+    <string name="login_screen">User Login</string>
+    <string name="registration_screen">User Registration</string>
+    <string name="album_screen">Album</string>
+    <string name="photo_screen">Gallery</string>
+    <string name="camera_screen">Camera</string>
+    <string name="settings_screen">Settings</string>
     <string name="mn_logo">MN_Logo</string>
     <string name="sign_in">Sign In</string>
     <string name="sign_up">Sign Up</string>
@@ -20,4 +26,16 @@
     <string name="cancel">Cancel</string>
     <string name="album_cover">Album Cover</string>
     <string name="TAG"> MESSAGE </string>
+    <string name="album_message">Click on the album you want to access</string>
+    <string name="album_add">Add</string>
+    <string name="album_delete">Delete</string>
+    <string name="image_placeholder">Image Placeholder</string>
+    <string name="application_settings">Application Settings</string>
+    <string name="account_settings">Account Settings</string>
+    <string name="camera_enabled">Camera Enabled</string>
+    <string name="text_size">Text Size</string>
+    <string name="application_information">Application Information</string>
+    <string name="help">Help</string>
+    <string name="text_icon">Text Icon</string>
+    <string name="take_picture">Take Picture</string>
 </resources>

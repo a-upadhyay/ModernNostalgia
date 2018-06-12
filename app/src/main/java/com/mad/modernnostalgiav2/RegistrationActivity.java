@@ -32,6 +32,10 @@ public class RegistrationActivity extends DrawerActivity {
     private ProgressBar mProgressBar;
     private FirebaseAuth mAuth;
 
+    /**
+     * Method called when activity created
+     * @param savedInstanceState the activity state
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,9 +47,13 @@ public class RegistrationActivity extends DrawerActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        //mSignUp = findViewById(R.id.button_sign_up);
     }
 
+    /**
+     * Method to register new user using Firebase Authentication
+     * With several checks for email and password verification.
+     * Note: All Strings used once are implemented within respective functions
+     */
     private void registerUser() {
         String email = mEmail.getText().toString().trim();
         String pwd = mPassword.getText().toString().trim();
@@ -71,28 +79,35 @@ public class RegistrationActivity extends DrawerActivity {
             return;
         }
 
-        mProgressBar.setVisibility(View.VISIBLE);
+        mProgressBar.setVisibility(View.VISIBLE); //show progress bar once registration verification begins
 
+        /* Check success of verification. */
         mAuth.createUserWithEmailAndPassword(email, pwd).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                mProgressBar.setVisibility(View.GONE);
+
+                mProgressBar.setVisibility(View.GONE); //hide progress bar once verification complete
+
+                //if successful, the user will be taken to login with new account
                 if (task.isSuccessful()) {
                     Log.d(TAG, "createUserWithEmail:success");
-                    Toast.makeText(getApplicationContext(),"User registered",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"User Registered",Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
-                   // intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
-                } else {
+                }
+                //  If there is an error while registering, the error message will be displayed on screen
+                else {
                     Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                   /* if (task.getException() instanceof FirebaseAuthUserCollisionException) {
-                        Toast.makeText(getApplicationContext(), "Email already registered", Toast.LENGTH_SHORT).show(); } */
                     Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();
                 }
             }
         });
     }
 
+    /**
+     * onClick to register user. It calls the registerUser function above
+     * @param view
+     */
     public void registerUser(View view) {
        try {
            registerUser();
@@ -102,22 +117,12 @@ public class RegistrationActivity extends DrawerActivity {
        }
     }
 
+    /**
+     * onClick to return back to login screen if user already has an account
+     * @param view
+     */
     public void loginReturn(View view) {
         Intent intent = new Intent(RegistrationActivity.this, LoginActivity.class);
         startActivity(intent);
     }
-
-   /* @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.button_sign_up:
-
-                break;
-
-            case R.id.button_cancel:
-                startActivity(new Intent(this, LoginActivity.class));
-                break;
-
-        }
-    } */
 }

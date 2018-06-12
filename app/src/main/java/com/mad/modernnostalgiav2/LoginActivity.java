@@ -30,6 +30,10 @@ public class LoginActivity extends DrawerActivity{
     private FirebaseAuth mAuth;
 
 
+    /**
+     * Method called when activity is created
+     *  @param savedInstanceState the activity state
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,19 +46,27 @@ public class LoginActivity extends DrawerActivity{
         mAuth = FirebaseAuth.getInstance();
     }
 
+    /**
+     * This method checks if user is signed in
+     */
     @Override
     public void onStart() {
         super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
+        //TODO updateUI accordingly
     }
 
+    /**
+     * Method to login user using Firebase Authentication
+     * With several checks for email and password verification.
+     * Note: All Strings used once are implemented within respective functions
+     */
     private void loginUser() {
         String email = mEmail.getText().toString().trim();
         String pwd = mPassword.getText().toString().trim();
 
         if (email.isEmpty()) {
-            mEmail.setError("Email required");
+           mEmail.setError("Email required");
             mEmail.requestFocus();
             return;
         }
@@ -74,21 +86,27 @@ public class LoginActivity extends DrawerActivity{
             return;
         }
 
-        mProgressBar.setVisibility(View.VISIBLE);
+        mProgressBar.setVisibility(View.VISIBLE); //show progress bar once login verification begins
 
+        /* Check success of verification. */
         mAuth.signInWithEmailAndPassword(email, pwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                mProgressBar.setVisibility(View.GONE);
+
+                mProgressBar.setVisibility(View.GONE); //hide progress bar once verification complete
+
+                //if successful, the user will be taken to the album screen
                 if (task.isSuccessful()) {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "signInWithEmail:success");
+                    Toast.makeText(getApplicationContext(),"Login Successful",Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginActivity.this, AlbumActivity.class);
-                    //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP); //TODO check better way of doing this
                     startActivity(intent);
 
                     FirebaseUser user = mAuth.getCurrentUser();
-                } else {
+                }
+                //  If there is an error while signing in, the error message will be displayed on screen
+                else {
                     Log.w(TAG, "signInWithEmail:failure", task.getException());
                     Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();
                 }
@@ -97,6 +115,9 @@ public class LoginActivity extends DrawerActivity{
 
     }
 
+    /**
+     * method to obtain current user information. To be implemented in future.
+     */
     private void getCurrentUser() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
@@ -116,8 +137,8 @@ public class LoginActivity extends DrawerActivity{
     }
 
     /**
-     * method to open album after login successful
-     *  @param view
+     * onClick method to open album after login successful
+     * @param view
      */
     public void login(View view) {
        try { loginUser(); }
@@ -126,6 +147,9 @@ public class LoginActivity extends DrawerActivity{
        }
     }
 
+    /**
+     * onClick method to open registration activity if user does not have an account @param view
+     */
     public void registration(View view) {
         startActivity(new Intent(LoginActivity.this, RegistrationActivity.class));
     }

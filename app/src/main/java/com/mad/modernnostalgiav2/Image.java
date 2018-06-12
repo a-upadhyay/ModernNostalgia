@@ -1,14 +1,14 @@
 package com.mad.modernnostalgiav2;
 
 /**
- * Constructor class for individual image in Photo activity with getter and setter for image
+ * Constructor class for individual image in the Gallery screen (Photo activity)
+ * With getter and setter methods for image
  */
 public class Image {
 
-    private int imageID;
+    private int imageID; //ImageView placeholder
 
-    public Image() {
-    }
+    public Image() { }
 
     public Image(int imageID) {
         this.imageID = imageID;

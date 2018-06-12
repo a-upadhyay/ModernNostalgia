@@ -11,6 +11,12 @@ public class PhotoActivity extends DrawerActivity {
     private ArrayList<Image> imageList;
     private Adapter mAdapter;
 
+    /**
+     * Method called when activity created.
+     * Includes the list of images to be displayed in the gallery, adapter for recycler view and card view
+     *
+     * @param savedInstanceState the activity state
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -11,16 +11,22 @@ import android.widget.ImageView;
 
 import java.util.ArrayList;
 
+/**
+ * The adapter class for Image to be displayed in photo gallery
+ * Extends RecyclerView and implements required methods
+ */
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     private Context mContext;
     private ArrayList<Image> mImages;
     public static final String TAG = "MESSAGE";
 
+    /** Constructor */
     public Adapter(Context context, ArrayList<Image> imageList) {
         this.mContext = context;
         this.mImages = imageList;
     }
 
+    /** Method for creating the view*/
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -32,6 +38,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
     }
 
+    /** Method to bind view holders */
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         // holder.img_placeholder.setScaleType(ImageView.ScaleType.FIT_CENTER);
@@ -43,11 +50,15 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
     }
 
 
+    /** count of data size */
     @Override
     public int getItemCount() {
         return mImages.size();
     }
 
+    /**
+     * ViewHolder class
+     */
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         ImageView img_placeholder;
@@ -57,11 +68,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         private Image imageObject;
         private int position;
 
+        /**
+         * Implements methods for adding and deleting photos from gallery
+         * @param itemView
+         */
         public ViewHolder(View itemView) {
             super(itemView);
 
-            img_placeholder = itemView.findViewById(R.id.image_placeholder);
+            img_placeholder = itemView.findViewById(R.id.image_placeholder); //places images from list in this placeholder
 
+            //Clicking on add image button under the photo will duplicate the image
             addImage = itemView.findViewById(R.id.add_icon);
             addImage.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -71,6 +87,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
                 }
             });
 
+            //Clicking on delete will delete the photo
             deleteImage = itemView.findViewById(R.id.delete_icon);
             deleteImage.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -81,6 +98,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             });
         }
 
+        /**
+         * Duplicate photo and add to list
+         * @param imageObject
+         * @param position
+         */
         public void setData(Image imageObject, int position) {
             //  this.img_placeholder.setScaleType(ImageView.ScaleType.FIT_CENTER);
             this.img_placeholder.setImageResource(imageObject.getImageID());
@@ -89,6 +111,11 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         }
     }
 
+    /**
+     * Delete photo and update list
+     * @param position
+     * @param currentObject
+     */
     public void addImage(int position, Image currentObject) {
         mImages.add(position, currentObject);
         notifyItemInserted(position);

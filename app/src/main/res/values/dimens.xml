@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="welcomeText">20dp</dimen>
+    <dimen name="welcomeText">20sp</dimen>
+    <dimen name="card_layout_margin">5dp</dimen>
+    <dimen name="card_layout_radius">4dp</dimen>
+    <dimen name="settingsText">20sp</dimen>
 </resources>

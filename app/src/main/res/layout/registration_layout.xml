@@ -51,14 +51,15 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/sign_up"
-            android:onClick="registerUser"/>
+            android:onClick="registerUser"
+            android:background="@color/buttonColor" />
         <Button
             android:id="@+id/button_return_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/already_account"
-            android:onClick="loginReturn"/>
+            android:onClick="loginReturn" />
 
     </LinearLayout>
 

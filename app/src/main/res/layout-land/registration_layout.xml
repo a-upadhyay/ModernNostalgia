@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <ImageView
-        android:id="@+id/modnos_logo"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_centerInParent="true"
+        android:id="@+id/image_logo"
+        android:layout_width="122dp"
+        android:layout_height="95dp"
         android:layout_alignParentTop="true"
-        android:src="@drawable/applogo"
-        android:contentDescription="@string/mn_logo"/>
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/mn_logo"
+        android:src="@drawable/applogo" />
 
     <LinearLayout
-        android:id="@+id/username_layout"
+        android:id="@+id/user_details_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_centerInParent="true"
-        android:paddingLeft="30dp"
-        android:paddingRight="30dp"
-        android:paddingBottom="20dp"
-        android:paddingTop="10dp" >
+        android:padding="30dp">
 
         <EditText
-            android:id="@+id/et_login_user"
+            android:id="@+id/et_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="text"
-            android:hint="@string/email" />
+            android:inputType="textEmailAddress"
+            android:hint="@string/email"
+            />
 
         <EditText
-            android:id="@+id/et_login_password"
+            android:id="@+id/et_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
@@ -42,27 +42,27 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_below="@+id/username_layout"
+        android:layout_below="@+id/user_details_layout"
         android:layout_centerInParent="true">
 
         <Button
-            android:id="@+id/button_sign_in"
+            android:id="@+id/button_sign_up"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/sign_in"
-            android:onClick="login"
+            android:text="@string/sign_up"
+            android:onClick="registerUser"
             android:background="@color/buttonColor" />
-
         <Button
-            android:id="@+id/button_registration"
+            android:id="@+id/button_return_login"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/no_account"
-            android:onClick="registration" />
+            android:text="@string/already_account"
+            android:onClick="loginReturn" />
 
     </LinearLayout>
+
     <ProgressBar
         android:id="@+id/reg_progress"
         android:layout_width="wrap_content"

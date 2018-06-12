@@ -16,11 +16,17 @@ public class MainActivity extends DrawerActivity {
         setContentView(R.layout.activity_main);
     }
 
+    /**
+     * onClick to open login screen
+     */
     public void startLogin(View view) {
         Intent intent = new Intent(MainActivity.this, LoginActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * onClick to open registration screen
+     */
     public void startRegistration(View view) {
         Intent intent = new Intent(MainActivity.this, RegistrationActivity.class);
         startActivity(intent);

@@ -3,7 +3,7 @@ package com.mad.modernnostalgiav2;
 import android.os.Bundle;
 
 /**
- * static settings page to be implemented
+ * Static settings page to be implemented in future
  */
 public class SettingsActivity extends DrawerActivity {
 

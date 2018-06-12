@@ -5,4 +5,5 @@
     <color name="colorAccent">#a0522d</color>
     <color name="welcomeText"> #000000 </color>
     <color name="buttonColor">#e19d9d</color>
+    <color name="black">#000000</color>
 </resources>
