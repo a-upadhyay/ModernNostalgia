@@ -142,7 +142,10 @@ public abstract class DrawerActivity extends AppCompatActivity implements MenuIt
                startActivity(intent);
                break;
            case R.id.exit:
-               finish();
+               Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+               intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+               startActivity(intent);
+
                break;
         }
         return true;
